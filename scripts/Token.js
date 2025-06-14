@@ -33,7 +33,7 @@ PATCHES.PATHFINDING = {};
  */
 function preUpdateToken(document, changes, _options, _userId) {
   const token = document.object;
-  if ( token.isPreview
+  if ( token === null || token.isPreview
     || !(Object.hasOwn(changes, "x") || Object.hasOwn(changes, "y") || Object.hasOwn(changes, "elevation")) ) return;
 
   // Don't update move data if the move flag is being updated (likely due to control-z undo).
